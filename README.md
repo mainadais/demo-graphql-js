@@ -1,10 +1,17 @@
-Directives - Built-in and SDL 
-@include - field, fragments
-@skip
-@deprecated
+- Directives - Built-in and SDL (field, fragments)
 
-Fragments
-Inline Fragments
-Union
-Interface
-Client
+  @include - field, fragments
+
+  @skip
+
+  @deprecated
+
+- Fragments
+
+- Inline Fragments
+
+- Union
+
+- Interface
+
+- Client
