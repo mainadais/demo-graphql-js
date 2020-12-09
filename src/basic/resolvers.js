@@ -1,8 +1,24 @@
-const { FakeLib, Some, None, Admin, Guest } = require("./entities");
+const { FakeDie, FakeLib, Some, None, Admin, Guest } = require("../entities");
 
 const fakeLib = new FakeLib();
 
 const rootValue = {
+  hello: () => {
+    return "hello world";
+  },
+
+  rollDice: ({ numDice, numSides }) => {
+    var output = [];
+    for (let i = 0; i < numDice; i++) {
+      output.push(1 + Math.floor(Math.random() * (numSides || 6)));
+    }
+    return output;
+  },
+
+  getDie: ({ numSides }) => {
+    return new FakeDie(numSides || 6);
+  },
+
   addBook: ({ book }) => {
     return fakeLib.create(book);
   },
@@ -32,6 +48,10 @@ const rootValue = {
     return fakeLib.select(() => true);
   },
 
+  getAvailableBooks: () => {
+    return fakeLib.select((book) => book.available);
+  },
+
   calculateValue: ({ num }) => {
     return num % 2 === 0
       ? {
@@ -57,4 +77,4 @@ const rootValue = {
   },
 };
 
-module.exports = rootValue;
+module.exports = rootValue

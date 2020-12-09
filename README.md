@@ -6,6 +6,8 @@
 
   @deprecated
 
+- Alias
+
 - Fragments
 
 - Inline Fragments
